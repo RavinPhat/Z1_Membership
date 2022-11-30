@@ -16,16 +16,19 @@ import axios from 'axios';
 import { Link, Outlet } from 'react-router-dom';
 import s from "./home.module.css"
 
-const HomePage = () => {
+const HomePageModal = () => {
   const [homepageSlide, setHomepageSlide] = useState()
   const [service, setService] = useState()
   const [homeVisitInfo, setHomeVisitInfo] = useState()
   const [topPartner, setTopPartner] = useState()
+  const [isModal , setIsModal] = useState(false)
+  const [homeVisit, setHomeVisit] = useState()
   useEffect(() => {
     getService()
     getSlide()
     getHomeVisitInfo()
     getTopPartner()
+    getHomeVisit()
   }, []);
   const getSlide = async () => {
     const resSlide = await axios.get('https://dev-z1m.z1platform.com/api/user/slide/list?categories=home_page',)
@@ -48,9 +51,26 @@ const HomePage = () => {
     setTopPartner(resTopPartner.data.data);
   }
 
+  const getHomeVisit= async () => {
+    const resHomeVisit = await axios.get('https://dev-z1m.z1platform.com/api/user/get/home-visit',
+      { headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3MSIsImp0aSI6Ijk2ZTRjYjZmMzVjMDMwY2VhNTVmMTAyYzJhMDljZmE1NTgzNzkzZTRiMjNhZmRiODVmYWIwMzg0MjFiNWFlMTlmMjg2ZTNkNDMwOTI1MjQ5IiwiaWF0IjoxNjY5MzYwMjMwLjY5MjA1OCwibmJmIjoxNjY5MzYwMjMwLjY5MjA2MiwiZXhwIjoxNzI5MzYwMjMwLjY4NjExMiwic3ViIjoiNjYiLCJzY29wZXMiOltdfQ.cyqAhfH-l8LM81nWmq7yPvWp8GsexnuOnUHFW5CFhgpaYq4b8kNV0077yEy4lw5WBU88wlV41Cj-m5tGkLgMdpzjyAMkKkri_18x1pBJwoo-q4By_ozCc4PIJRMa5V9rHDejXjyMMd0zDTwRQiC2Iibtanl8N3zC1KoFIrlbx9rfb6fxIfTDsNvuA_a0nC3ptewi3LRxoIjTPw15mx0YP3XeG9tFqLwUkBcRvUkuSmloP5eCgxEsx5USfy3yMnocR19BQD4MTldSQGme9-vQfssp-1ryLniBUGzc3bnl8bh6sgCdNtBy6dTXWx4cWwcCpRO-TLrqWn9pu-lBZkhPgucbngXk5_y_qdIC4mCBbCrCDG16D8EFJL3KFSnLqucxX_uyRVwJEbjsceF9LiSa4y9aMTU1DTHwY7RLoiDuhxqx9o9q1S5CR7gIABDNo0VulbTJpB26DUeQ1lyFKjEyVgx-_ooMKHjNiT4BvBrno3KPvcTdeCcj6BPzuT3sDQVIASihPV-qTqoh2npqomzE-N6klan-CwBdO5iN0ToIn-ue1viE7FUmuqPyo242cf8pA6Q4sazSXMXRleEkGCnxJ21mz2T7A3IEOvPCJQcirsSjP7Mg9om3TLIwiPS5-vkziZr96aL8B1PmMvklNsMXJMGuQtw-9RGQWpr5DWOqBTo' } })
+    console.log(resHomeVisit.data.data);
+    setHomeVisit(resHomeVisit.data.data);
+  }
+
+ const modalHandle = () =>{
+  setIsModal(!isModal) 
+ }
+
+ if(isModal == true){
+  document.body.style.overflow = "hidden"
+ }else{
+  document.body.style.overflow = "auto"
+ }
+
   return (
-      <div>
-        <div className='d-flex justify-content-between navbar sticky-top' style={{paddingBottom:'15px', backgroundColor:'white',maxWidth:'1024px',width:'100%',zIndex:'100',marginBottom:'10px'}}>
+      <div style={{ background: 'white',position:'relative'}} >
+        <div className='d-flex justify-content-between' style={{paddingTop:'15px',paddingBottom:'15px', backgroundColor:'white'}}>
           <div>
           <Link to={'/page'}>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
@@ -64,8 +84,7 @@ const HomePage = () => {
           </div>
           
         </div>
-      <div style={{ background: 'white',position:'relative'}} >
-        <div style={{ width: '90%', margin: '0 auto', paddingTop: '30px' }}>
+        <div style={{ width: '90%', margin: '0 auto', marginTop: '10px', paddingTop: '30px' }}>
           <Swiper
             spaceBetween={30}
             pagination={{
@@ -128,9 +147,7 @@ const HomePage = () => {
                 <div className='col-6' >
                   <h3 style={{ paddingTop: '10px', color: 'white', textAlign: 'start', paddingLeft: '50px' }}>HOME VISIT</h3>
                   <p style={{ color: 'white', marginLeft: '20px', textAlign: 'start', paddingLeft: '15px' }}>{homeVisitInfo?.value}</p>
-                  <Link to={'/homevisit'}>
-                    <button style={{ marginBottom: '20px', textAlign: 'start', padding: '5px', background:'white' , borderRadius: '10px',fontSize:'15px',color:'green' }}>View our activity</button>
-                  </Link>
+                  <button onClick={modalHandle} style={{ marginBottom: '20px', textAlign: 'start', padding: '5px', background:'white' , borderRadius: '10px',fontSize:'15px',color:'green' }}>View our activity</button>
                 </div>
                 <div className='col-6 d-flex' style={{ margin: '0 auto', justifyContent: 'center', alignItems: 'center', }} >
                   <svg width="400" height="200" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,9 +166,7 @@ const HomePage = () => {
                 <div className='col-6' >
                   <h3 style={{ paddingTop: '10px', color: 'white', textAlign: 'start', paddingLeft: '50px' }}>24/7 HOTLINE</h3>
                   <p style={{ color: 'white', marginLeft: '20px', textAlign: 'start', paddingLeft: '15px' }}>{homeVisitInfo?.value}</p>
-                  <Link to={'/contactus'}>
                   <button style={{ marginBottom: '15px', textAlign: 'start', padding: '5px',background:'white' , borderRadius: '10px',fontSize:'15px',color:'green' }}>Contact Us</button>
-                  </Link>
                 </div>
                 <div className='col-6 d-flex' style={{ margin: '0 auto', justifyContent: 'center', alignItems: 'center', }} >
                   <svg width="400" height="200" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +190,7 @@ const HomePage = () => {
           </Link>
         </div><br></br>
 
-        <div className='row' style={{ marginLeft: '40px',marginRight: '40px',marginTop: '40px',paddingBottom:'20px', background: 'white' }}>
+        <div className='row' style={{ margin: '40px', background: 'white' }}>
           {topPartner?.slice(0, 3).map((data) =>
             <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
@@ -187,9 +202,42 @@ const HomePage = () => {
           )}
         </div>
         <Outlet />
+        <div>
+          {isModal ? 
+          <div style={{height : '100vh'}}>
+            <div style={{background : 'black' ,height : '100vh'  ,width: '100%', position:'absolute' , top: '0' , height : '100%' , opacity : '0.5'  }} onClick={()=> setIsModal(false)}></div>
+            {/* <div className={s.containOverlay} > */}
+            <div style={{position:'absolute', top:'5%', left:'0', right:'0', marginLeft:'auto', zIndex:'50',marginRight:'auto',backgroundColor:'white', margin: '5%', border: '2px solid green', borderRadius: '20px'}} >
+              <div className='row'>
+                <h1 className='col' style={{textAlign: 'start', fontSize:'24px', marginTop:'3%',marginLeft:'3%'}}>Home Visit</h1>
+                <h1 className='col items-end' style={{textAlign: 'end', marginTop:'2%', paddingRight:'6%'}} onClick={()=> setIsModal(false)}><Clear style={{fontSize:'32px'}} /></h1>
+                </div>
+                <p className='col' style={{textAlign: 'start',marginLeft:'3%'}}>{homeVisitInfo?.value}</p>
+                <div>
+                  {homeVisit?.map((data)=>
+                  <div className='row' key={data.id} style={{padding:'2%',paddingLeft:'5%'}}>
+                    <div className='col-4' >
+                      <img src={data?.icon} style={{borderRadius: '10px',height:'120px',width:'160px'}}></img>
+                    </div>
+                    <div className='col-8' style={{paddingTop:'3%'}}>
+                      <div className='row'>
+                        <div className='col'><b>{data?.title}</b></div>
+                      </div>
+                      <div className='row'>
+                        <div className='col'>{data?.name}</div>
+                      </div>
+                      <div className='row'>
+                        <div className='col'>{data?.publish_date}</div>
+                      </div>
+                    </div>
+                  </div>
+                  )}
+                </div>
+            </div></div>
+            : null}
+        </div>
       </div>
-    </div>
   )
 }
 
-export default HomePage
+export default HomePageModal
