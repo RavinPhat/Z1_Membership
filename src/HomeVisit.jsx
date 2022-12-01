@@ -39,7 +39,7 @@ const HomeVisit = () => {
           <Link to={'/page'}>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
           </Link>
-          <Link to={'/'}>
+          <Link to={'/homepage'}>
           <img style={{height:'36px'}} src={'./Horizontal.png'} />
           </Link>
           </div>

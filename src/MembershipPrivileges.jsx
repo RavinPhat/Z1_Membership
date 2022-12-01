@@ -19,7 +19,6 @@ const MembershipPrivileges = () => {
         const getMember = async () => {
             const req = await axios.get('https://dev-z1m.z1platform.com/api/contact/by/user',
                 { headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3MSIsImp0aSI6Ijg0MjcwM2EyZjUyMTJjODI4MTE4N2VlZTM3NjQ4ODA1Njk1ZTg0NmIyNGU0MWRjNjI1NTdiOGRkZDIyMWM4NTBmYjdiZWJmYTU0ZGU2NzMyIiwiaWF0IjoxNjY5MzYwNzE4Ljc4NjUxMywibmJmIjoxNjY5MzYwNzE4Ljc4NjUxNiwiZXhwIjoxNzI5MzYwNzE4Ljc4MTAyOCwic3ViIjoiMTAiLCJzY29wZXMiOltdfQ.Snv62PHgmV0LfwhUHpU3ZFJRzMzwMKXHN7PxHyBbLDJaCsuQNzcyvUUNFlDn8W-j9Xt7jvWq5m_91uNUeB4dZi9w3wQerybv7p8JUIiYMzCY-3oCbuFD6k5QoRzL0Kf5czKzrx2VQK47b1ixMwizuKGoGHvsFI33WCqz05gGa7_udgBViQrq5EfGn2SolCd0wa1VlGfK2TwCYNnxydkZ6fAo0fMDkp_tOGCtCgN2YOc67mLBdWFrNYNBgySwcDL1_kpbd6wwPiD5xVUVxDYFS0YamAOGF60waJ-H2fo1OWpCqMU04u3-r8-18yCEiH_rYh4DopRjs9HBO7cg7cWn8NyzGjDxjkzV6QQa_m5aRPf0LUsE1AnoCl51Y2xMWvr3Mf_wmwF8fr9p4hY48As-u30PeD8_zr3lisAHmnesvi3UBCjrb_EKEnmIz5ir7vslWCDMi4HmWH_wxCcPSmVL9D1DCUr0Z3zF-IlW0QJ5eMxXUMO1vHslc_FKzgS8KA3K5XPShBe6uyniDPrNwAYpeAKBUXc9Zphmbl9AnYCOwUZ-XyPB1POyWX-pcJb0eeRoGyZz7HGMHS2AyBdUj0KUZSMns141HoxiV5gZITKKOiMUurqRYYQU2cxwMQNBw_soYqm1sB9Wgromt1WVFnSiIxfwZ1d2WQhoO3_0AFNZ4yU' } })
-            // console.log(req.data.data);
             setMember(req.data.data)
         }
         getMember()
@@ -27,7 +26,6 @@ const MembershipPrivileges = () => {
         const getFAQS = async () => {
             const req = await axios.get('https://dev-z1m.z1platform.com/api/user/get/faqs',
                 { headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3MSIsImp0aSI6Ijg0MjcwM2EyZjUyMTJjODI4MTE4N2VlZTM3NjQ4ODA1Njk1ZTg0NmIyNGU0MWRjNjI1NTdiOGRkZDIyMWM4NTBmYjdiZWJmYTU0ZGU2NzMyIiwiaWF0IjoxNjY5MzYwNzE4Ljc4NjUxMywibmJmIjoxNjY5MzYwNzE4Ljc4NjUxNiwiZXhwIjoxNzI5MzYwNzE4Ljc4MTAyOCwic3ViIjoiMTAiLCJzY29wZXMiOltdfQ.Snv62PHgmV0LfwhUHpU3ZFJRzMzwMKXHN7PxHyBbLDJaCsuQNzcyvUUNFlDn8W-j9Xt7jvWq5m_91uNUeB4dZi9w3wQerybv7p8JUIiYMzCY-3oCbuFD6k5QoRzL0Kf5czKzrx2VQK47b1ixMwizuKGoGHvsFI33WCqz05gGa7_udgBViQrq5EfGn2SolCd0wa1VlGfK2TwCYNnxydkZ6fAo0fMDkp_tOGCtCgN2YOc67mLBdWFrNYNBgySwcDL1_kpbd6wwPiD5xVUVxDYFS0YamAOGF60waJ-H2fo1OWpCqMU04u3-r8-18yCEiH_rYh4DopRjs9HBO7cg7cWn8NyzGjDxjkzV6QQa_m5aRPf0LUsE1AnoCl51Y2xMWvr3Mf_wmwF8fr9p4hY48As-u30PeD8_zr3lisAHmnesvi3UBCjrb_EKEnmIz5ir7vslWCDMi4HmWH_wxCcPSmVL9D1DCUr0Z3zF-IlW0QJ5eMxXUMO1vHslc_FKzgS8KA3K5XPShBe6uyniDPrNwAYpeAKBUXc9Zphmbl9AnYCOwUZ-XyPB1POyWX-pcJb0eeRoGyZz7HGMHS2AyBdUj0KUZSMns141HoxiV5gZITKKOiMUurqRYYQU2cxwMQNBw_soYqm1sB9Wgromt1WVFnSiIxfwZ1d2WQhoO3_0AFNZ4yU' } })
-            //console.log(req.data.data);
             setFAQS(req.data.data)
         }
         getFAQS()
@@ -46,8 +44,6 @@ const MembershipPrivileges = () => {
         const result = description;
         setDescription('')
         if(result){
-            console.log(result);
-            console.log();
             const res = await axios.post('https://dev-z1m.z1platform.com/api/user/feedback/create', 
                 {
                     category: "Natural Park",
@@ -57,7 +53,6 @@ const MembershipPrivileges = () => {
                     Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI2NyIsImp0aSI6ImNlYmExNWNhNzEwYTk0N2FmM2NkMDVhMTU3NzQ1ZGU4NDg3NjJhMzcwZTY5OTFjZmIwZDcyMDNkMjlkODFiMTUyMjk5OWY1NDkwY2VhZjhlIiwiaWF0IjoxNjY5MjU4NzE3Ljc0MzI0NiwibmJmIjoxNjY5MjU4NzE3Ljc0MzI1MSwiZXhwIjoxNzI5MjU4NzE3LjcyNjI0Niwic3ViIjoiMTAiLCJzY29wZXMiOltdfQ.R-mLFXhuY8tqfgHVKyFNwdZW8MsgPpcvnrmJt40uVfmxXsZHyQ-aq2wbYmHAuFpTliSl1ghuvih2rzBFvVIU7dOO_2TIJb5lXVJ1k8xnRS-r9TxYF0BSEhsd6ONYlMPSJDYDLltYxpI5QmIpm1C8lw4QPMZU05IXkOGo7hmqwP78JaVKIF6YkMYltU-mMABG5b-86r2aDYATXjSSVDElTcEBZwVHl8f3jsck6N3mSkteNQunF-GSWrVimPYvpZtiJlgkr90DdBS6ULli4avdNCtGsJInWot_J2_7-L9Yhcu0nAwuq1DnFhr11hX8647Iv20zaMLPHw7LogbCRUEvlg04JIpL5WUsjWDG11NBcdKPPN-nNNbH3zpm2UmMSQsGCEg4mwbFPA3-LgE-jtTUiczF9rQhw4wHMn4vkvgaJG3w18zJKe8PeVUBNd3p5qL5AGAVDSPe6Y1ajdi5SR4D2X5e_F8qVFC1TKwUi-3YopWYkJj2fouJhBYWM46t9PoD1dPcmu-w4oPIY3Yv5SYCRytJmzE5oAfJbmOOE8lAD5ovgoJsMEFHB9WLaDZrayMLJK0cgn27ypgxVHaG__Vgj6o-vJ4aIRlCi4MKC33GDtMiElz804tWKUulo1rNOqguG52AEhwE_q_u-I5gQhtBDyk4rUMZUACNiutWkqzghmg',
                 }})
             .then( ( {data} ) =>  {
-                console.log(data)
                 Swal.fire({
                     title: 'Thanks For Your Feedback, Love You !!!',
                     icon: 'success',
@@ -75,20 +70,12 @@ const MembershipPrivileges = () => {
     return (
         <div style={{ background: 'white' , position:'relative'}}>
             <div>
-                <Link to='/'>
+                <Link to='/homepage'>
                     <h1 style={{ marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Home Pages</h1>
                 </Link>
             </div>
             <div style={{ marginLeft: '5%', marginRight: '5%', textAlign: 'center', background:'#287F30', padding:'50px', backgroundSize: '100%',backgroundImage:'url(./BackgroundProfile.png)' }}>
-                {/* <div style={{ backgroundSize: '100%',backgroundImage:'url(./BackgroundProfile.png)' }}> */}
-                {/* <div className='position-relative'>
-                    <Profile />    
-                <img className='position-absolute top-50 start-50 translate-middle-custom'  src={member.avatar} style={{ height: '145px', borderRadius: '999px', textAlign:'center', marginBottom:'10px' }}></img>
-                <div className='position-absolute bottom-0 translate-bottom-cs'><Name /></div>
-                <p className='position-absolute bottom-0 translate-bottom-name' style={{fontSize:'16px',color:'white',alignItems:'center'}}>{member.first_name} {member.last_name}</p>
-                </div> */}
-                {/* </div> */}
-                <img src={member.avatar} style={{ height: '505px', borderRadius: '999px', textAlign:'center', marginBottom:'10px' }}></img>
+                <img src={member.avatar} height='300px' width='300px' style={{ borderRadius: '50%', textAlign:'center', marginBottom:'10px' }}></img>
             </div>
 
             <div>
@@ -160,19 +147,18 @@ const MembershipPrivileges = () => {
                 </Accordion>
             </div>
 
-            <div>
-                <h3 style={{ marginBottom: '20px', paddingTop: '20px', marginLeft: '5%', float:'left' }}>FAQs</h3>
+            <div className='d-flex justify-content-between' style={{ marginBottom: '20px', paddingTop: '20px', margin: '20px' }}>
+                <h3 style={{padding: '10px'}}>FAQs</h3>
                 <Link to={'/faqs'}>
                     {/* <button style={{ marginBottom: '20px', padding: '10px', marginLeft: '5%',marginRight:'3%', float:'right', background:'green' ,color:'white' ,border:'white',borderRadius: '99px'}} onClick={()=> setIsModal(!isModal)}>See All FAQS</button> */}
-                    <button style={{ marginBottom: '20px', padding: '10px', marginLeft: '5%',marginRight:'3%', float:'right', background:'#287F30' ,color:'white' ,border:'white',borderRadius: '99px'}}>See All FAQS</button>
+                    <button style={{padding: '10px',background:'#287F30' ,color:'white' ,border:'white',borderRadius: '99px'}}>See All FAQS</button>
                 </Link>
             </div>
 
             
-            <div style={{margin:'5%',marginTop:'15%'}}>
+            <div style={{margin:'5%'}}>
                 <Accordion defaultActiveKey="0">
                 {faqs.slice(0,4).map((data)=>(
-
                     <Accordion.Item eventKey={data.id} key={data.id}>
                         <Accordion.Header>{data.question}</Accordion.Header>
                         <Accordion.Body>
@@ -186,12 +172,12 @@ const MembershipPrivileges = () => {
 
                 </div>
                 <div style={{textAlign: 'center'}}>
-                <Link to={'/faqs'}type="button" onClick={()=> setIsModal(!isModal)}>
+                <Link to={'/faqs'}type="button" >
                     <p>See All FAQS</p>
                 </Link>
                 </div>
 
-                {isModal ? <div style={{position:'absolute' , top:'0px' , left:'0', right:'0', marginLeft:'auto', marginRight:'auto',backgroundColor:'white'}}>
+                {/* {isModal ? <div style={{position:'absolute' , top:'0px' , left:'0', right:'0', marginLeft:'auto', marginRight:'auto',backgroundColor:'white'}}>
                     <h1 style={{float:'left', fontSize:'24px', marginLeft:'3%', marginTop:'3%'}}>Frequently Asked Questions(FAQS)</h1>
                     <h1 style={{float:'right', marginRight:'3%', marginTop:'3%'}} onClick={()=> setIsModal(false)}><Clear style={{fontSize:'32px'}} /></h1>
                     <Accordion defaultActiveKey="0">
@@ -205,9 +191,9 @@ const MembershipPrivileges = () => {
                             </Accordion.Item>
                         ))}
                     </Accordion>
-                    
+                     */}
 
-                </div>: null}
+        
             </div>
 
             

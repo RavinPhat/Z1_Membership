@@ -39,7 +39,7 @@ const OurPartner = () => {
 
                 <div >
 
-                    <Link to='/'>
+                    <Link to='/homepage'>
                         <h1 style={{ float: 'left', marginBottom: '20px', marginTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Our Partners</h1>
                     </Link>
 

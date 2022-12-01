@@ -11,7 +11,8 @@ import Page from './Page';
 import HomeVisit from './HomeVisit';
 import ContactUs from './ContactUs';
 import FAQs from './FAQs';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Login from'./Login';
+import { BrowserRouter, Routes, Route , Redirect} from 'react-router-dom';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
     <div style={{maxWidth:'1024px', margin:'0px auto'}}>
       <BrowserRouter>
       <Routes>
-        <Route  path='/' element={<HomePage />} />
+        
+        <Route  path='/' element={<Login />} />
         <Route  path='/toppartner' element={<TopPartner />} />
         <Route  path='/ourpartner' element={<OurPartner />} />
         <Route  path='/categorypartner/:id' element={<Advisory />} />
@@ -30,6 +32,7 @@ function App() {
         <Route  path='/homevisit' element={<HomeVisit />} />
         <Route  path='/contactus' element={<ContactUs />} />
         <Route  path='/faqs' element={<FAQs />} />
+        <Route  path='/homepage' element={<HomePage />} />
       </Routes>
       </BrowserRouter>
     </div>

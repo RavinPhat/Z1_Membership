@@ -33,7 +33,6 @@ const ContactUs = () => {
   const getContactUs= async () => {
     const resContactUs = await axios.get('https://dev-z1m.z1platform.com/api/user/get/home-visit',
       { headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3MSIsImp0aSI6Ijk2ZTRjYjZmMzVjMDMwY2VhNTVmMTAyYzJhMDljZmE1NTgzNzkzZTRiMjNhZmRiODVmYWIwMzg0MjFiNWFlMTlmMjg2ZTNkNDMwOTI1MjQ5IiwiaWF0IjoxNjY5MzYwMjMwLjY5MjA1OCwibmJmIjoxNjY5MzYwMjMwLjY5MjA2MiwiZXhwIjoxNzI5MzYwMjMwLjY4NjExMiwic3ViIjoiNjYiLCJzY29wZXMiOltdfQ.cyqAhfH-l8LM81nWmq7yPvWp8GsexnuOnUHFW5CFhgpaYq4b8kNV0077yEy4lw5WBU88wlV41Cj-m5tGkLgMdpzjyAMkKkri_18x1pBJwoo-q4By_ozCc4PIJRMa5V9rHDejXjyMMd0zDTwRQiC2Iibtanl8N3zC1KoFIrlbx9rfb6fxIfTDsNvuA_a0nC3ptewi3LRxoIjTPw15mx0YP3XeG9tFqLwUkBcRvUkuSmloP5eCgxEsx5USfy3yMnocR19BQD4MTldSQGme9-vQfssp-1ryLniBUGzc3bnl8bh6sgCdNtBy6dTXWx4cWwcCpRO-TLrqWn9pu-lBZkhPgucbngXk5_y_qdIC4mCBbCrCDG16D8EFJL3KFSnLqucxX_uyRVwJEbjsceF9LiSa4y9aMTU1DTHwY7RLoiDuhxqx9o9q1S5CR7gIABDNo0VulbTJpB26DUeQ1lyFKjEyVgx-_ooMKHjNiT4BvBrno3KPvcTdeCcj6BPzuT3sDQVIASihPV-qTqoh2npqomzE-N6klan-CwBdO5iN0ToIn-ue1viE7FUmuqPyo242cf8pA6Q4sazSXMXRleEkGCnxJ21mz2T7A3IEOvPCJQcirsSjP7Mg9om3TLIwiPS5-vkziZr96aL8B1PmMvklNsMXJMGuQtw-9RGQWpr5DWOqBTo' } })
-    // console.log(resContactUs.data.data);
     setContactUs(resContactUs.data.data);
   }
   
@@ -44,14 +43,14 @@ const ContactUs = () => {
           <Link to={'/page'}>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
           </Link>
-          <Link to={'/'}>
+          <Link to={'/homepage'}>
           <img style={{height:'36px',}} src={'./Horizontal.png'} />
           </Link>
           </div>
           <div>
           <QrCodeScannerIcon sx={{ width: 50, fontSize: 32 }} />
           <NotificationsActiveIcon sx={{ width: 50, fontSize: 32 }} />
-          <Link to={'/'}>
+          <Link to={'/homepage'}>
             <CloseIcon sx={{ width: 50, fontSize: 32 }} />
           </Link>
           </div>
