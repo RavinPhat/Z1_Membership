@@ -70,7 +70,7 @@ const HomePageModal = () => {
       <div style={{ background: 'white',position:'relative'}} >
         <div className='d-flex justify-content-between' style={{paddingTop:'15px',paddingBottom:'15px', backgroundColor:'white'}}>
           <div>
-          <Link to={'/page'}>
+          <Link to={'/page'} className='text-decoration-none'>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
           </Link>
           <img style={{height:'36px'}} src={'./Horizontal.png'} />
@@ -104,14 +104,14 @@ const HomePageModal = () => {
         </div>
         <div className='row' style={{ margin: '40px', background: 'white' }}>
           {service?.slice(0,1).map((data) =>
-            <Link to={'/membershipprivileges'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+            <Link to={'/membershipprivileges'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.image}></img>
               <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
             </Link>
             
           )}
            {service?.slice(2,3).map((data) =>
-            <Link to={'/ourpartner'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+            <Link to={'/ourpartner'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.image}></img>
               <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
             </Link>
@@ -183,14 +183,14 @@ const HomePageModal = () => {
 
         <div >
           <h1 style={{ float: 'left' }}><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Top Partner</h1>
-          <Link to='/toppartner'>
+          <Link to='/toppartner' className='text-decoration-none'>
             <h4 style={{ float: 'right', marginRight: '5%', color: 'MediumSeaGreen' }}>See All</h4>
           </Link>
         </div><br></br>
 
         <div className='row' style={{ margin: '40px', background: 'white' }}>
           {topPartner?.slice(0, 3).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
               <p >{data.address}</p>
               <p className='fw-bold' style={{ color: 'Orange' }}>{data.name}</p>

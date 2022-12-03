@@ -36,10 +36,10 @@ const HomeVisit = () => {
     <div style={{ background: 'white'}} >
         <div className='d-flex justify-content-between' style={{paddingTop:'15px',paddingBottom:'15px', backgroundColor:'white'}}>
           <div>
-          <Link to={'/page'}>
+          <Link to={'/page'} className='text-decoration-none'>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
           </Link>
-          <Link to={'/homepage'}>
+          <Link to={'/homepage'} className='text-decoration-none'>
           <img style={{height:'36px'}} src={'./Horizontal.png'} />
           </Link>
           </div>

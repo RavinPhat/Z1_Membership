@@ -29,7 +29,7 @@ useEffect(() => {
 
      <div style={{ background: 'white'}}>
         <div>
-          <Link to='/ourpartner'>
+          <Link to='/ourpartner' className='text-decoration-none'>
             <h1 style={{marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />{partner.category}</h1>
           </Link>
         </div>
@@ -72,7 +72,7 @@ useEffect(() => {
         </div>
         <div className='row' style={{ margin: '40px', background: 'white' }}>
           {branch?.map((data) =>
-            <Link to={`/`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px' }}>
+            <Link to={`/`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
               <p className='fw-bold' style={{ color: 'Orange' }}>{data.name}</p>
               <p>{data.description.length >= 20 ? data.description?.substring(0, 20)+'...':data.description}</p>

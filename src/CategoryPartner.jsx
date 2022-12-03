@@ -21,7 +21,7 @@ useEffect(() => {
   return (
      <div style={{ background: 'white' }}>
         <div>
-          <Link to='/ourpartner'>
+          <Link to='/ourpartner' className='text-decoration-none'>
             <h1 style={{marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />
             {categoryPartner?.slice(0,1).map((data) => data?.category)}
             </h1>
@@ -29,7 +29,7 @@ useEffect(() => {
         </div>
         <div className='row' style={{ margin: '40px', background: 'white' }}>
             {categoryPartner?.map((data) =>
-              <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
+              <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
                 <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
                 <p className='fw-bold' style={{ color: 'Orange' }}>{data.name?.substring(0, 30)}</p>
                 <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.description?.substring(0, 60)}</p>

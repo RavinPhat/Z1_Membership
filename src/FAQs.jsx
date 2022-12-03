@@ -23,7 +23,7 @@ const FAQs = () => {
     return (
         <div style={{ background: 'white' , position:'relative'}}>
             <div>
-                <Link to='/membershipprivileges'>
+                <Link to='/membershipprivileges' className='text-decoration-none'>
                     <h1 style={{ marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Membership Privileges</h1>
                 </Link>
             </div>

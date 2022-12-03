@@ -53,7 +53,7 @@ const HomePage = () => {
       <div>
         <div className='d-flex justify-content-between navbar sticky-top' style={{paddingBottom:'15px', backgroundColor:'white',maxWidth:'1024px',width:'100%',zIndex:'100',marginBottom:'10px'}}>
           <div>
-          <Link to={'/page'}>
+          <Link to={'/page'} className='text-decoration-none'>
           <DehazeIcon sx={{ width: 100, fontSize: 32 }} />
           </Link>
           <img style={{height:'36px'}} src={'./Horizontal.png'} />
@@ -61,7 +61,7 @@ const HomePage = () => {
           <div>
           <QrCodeScannerIcon sx={{ width: 50, fontSize: 32 }} />
           <NotificationsActiveIcon sx={{ width: 50, fontSize: 32 }} />
-          <Link to={'/login'}>
+          <Link to={'/'} className='text-decoration-none'>
           <LogoutIcon sx={{ width: 50, fontSize: 32 }} />
           </Link>
           </div>
@@ -90,14 +90,14 @@ const HomePage = () => {
         </div>
         <div className='row' style={{ margin: '40px', background: 'white' }}>
           {service?.slice(0,1).map((data) =>
-            <Link to={'/membershipprivileges'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+            <Link to={'/membershipprivileges'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.image}></img>
               <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
             </Link>
             
           )}
            {service?.slice(2,3).map((data) =>
-            <Link to={'/ourpartner'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+            <Link to={'/ourpartner'} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
               <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.image}></img>
               <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
             </Link>
@@ -126,12 +126,12 @@ const HomePage = () => {
             style={{position : 'relative' , zIndex: '0'}}
           >
             <SwiperSlide>
-              <div className='width-100 row' style={{ backgroundImage: 'url(./test2323.jpg)', backgroundSize: '100%' }}>
+              <div className='row width-100' style={{ backgroundImage: 'url(./test2323.jpg)', backgroundSize: '100%' }}>
 
                 <div className='col-6' >
                   <h3 style={{ paddingTop: '10px', color: 'white', textAlign: 'start', paddingLeft: '50px' }}>HOME VISIT</h3>
                   <p style={{ color: 'white', marginLeft: '20px', textAlign: 'start', paddingLeft: '15px' }}>{homeVisitInfo?.value}</p>
-                  <Link to={'/homevisit'}>
+                  <Link to={'/homevisit'} className='text-decoration-none'>
                     <button style={{ marginBottom: '20px', textAlign: 'start', padding: '5px', background:'white' , borderRadius: '10px',fontSize:'15px',color:'green' }}>View our activity</button>
                   </Link>
                 </div>
@@ -152,7 +152,7 @@ const HomePage = () => {
                 <div className='col-6' >
                   <h3 style={{ paddingTop: '10px', color: 'white', textAlign: 'start', paddingLeft: '50px' }}>24/7 HOTLINE</h3>
                   <p style={{ color: 'white', marginLeft: '20px', textAlign: 'start', paddingLeft: '15px' }}>{homeVisitInfo?.value}</p>
-                  <Link to={'/contactus'}>
+                  <Link to={'/contactus'} className='text-decoration-none'>
                   <button style={{ marginBottom: '15px', textAlign: 'start', padding: '5px',background:'white' , borderRadius: '10px',fontSize:'15px',color:'green' }}>Contact Us</button>
                   </Link>
                 </div>
@@ -173,19 +173,26 @@ const HomePage = () => {
 
         <div >
           <h1 style={{ float: 'left' }}><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Top Partner</h1>
-          <Link to='/toppartner'>
+          <Link to='/toppartner' className='text-decoration-none'>
             <h4 style={{ float: 'right', marginRight: '5%', color: 'MediumSeaGreen' }}>See All</h4>
           </Link>
         </div><br></br>
 
-        <div className='row' style={{ marginLeft: '40px',marginRight: '40px',marginTop: '40px',paddingBottom:'20px', background: 'white' }}>
+        <div className='row' style={{ marginLeft: '40px',marginRight: '40px',marginTop: '40px',paddingBottom:'20px', background: 'white', }}>
           {topPartner?.slice(0, 3).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
-              <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+
+              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px'}}>
+              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={data.gallary}></img>
+              </div>
+
+              <div>
               <p >{data.address}</p>
               <p className='fw-bold' style={{ color: 'Orange' }}>{data.name}</p>
               <p>{(data.description).slice(0, 30)}</p>
               <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>Discount{data.discount}</p>
+              </div>
+
             </Link>
           )}
         </div>

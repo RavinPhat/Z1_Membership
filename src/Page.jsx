@@ -33,7 +33,7 @@ const Page = () => {
           <img style={{height:'36px'}} src={'./Horizontal.png'} />
           </div>
           <div>
-          <Link to={'/homepage'}>
+          <Link to={'/homepage'} className='text-decoration-none'>
             <CloseIcon sx={{ width: 50, fontSize: 32 }} />
           </Link>
           </div>

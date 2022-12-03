@@ -39,7 +39,7 @@ const OurPartner = () => {
 
                 <div >
 
-                    <Link to='/homepage'>
+                    <Link to='/homepage' className='text-decoration-none'>
                         <h1 style={{ float: 'left', marginBottom: '20px', marginTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Our Partners</h1>
                     </Link>
 
@@ -87,7 +87,7 @@ const OurPartner = () => {
 
                 <div className='row' style={{ margin: '40px', background: 'white' }}>
                     {categoryPartner?.slice(0,1).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -95,7 +95,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(1,2).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -103,7 +103,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(2,3).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -111,7 +111,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(3,4).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -119,7 +119,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(4,5).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -127,7 +127,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(5,6).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -135,7 +135,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(6,7).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -143,7 +143,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(7,8).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -151,7 +151,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(8,9).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -159,7 +159,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(9,10).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -167,7 +167,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(10,11).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
@@ -175,7 +175,7 @@ const OurPartner = () => {
                         
                     )}
                     {categoryPartner?.slice(11,12).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2' style={{ padding: '10px' }}>
+                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
                         <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
                         <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>

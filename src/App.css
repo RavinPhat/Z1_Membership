@@ -362,6 +362,10 @@ table {
 	margin-bottom: 15px;
 	margin-left: 10px;
 }
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
 
 
 

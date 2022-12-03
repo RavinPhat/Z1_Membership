@@ -70,7 +70,7 @@ const MembershipPrivileges = () => {
     return (
         <div style={{ background: 'white' , position:'relative'}}>
             <div>
-                <Link to='/homepage'>
+                <Link to='/homepage' className='text-decoration-none'>
                     <h1 style={{ marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Home Pages</h1>
                 </Link>
             </div>
@@ -149,7 +149,7 @@ const MembershipPrivileges = () => {
 
             <div className='d-flex justify-content-between' style={{ marginBottom: '20px', paddingTop: '20px', margin: '20px' }}>
                 <h3 style={{padding: '10px'}}>FAQs</h3>
-                <Link to={'/faqs'}>
+                <Link to={'/faqs'} className='text-decoration-none'>
                     {/* <button style={{ marginBottom: '20px', padding: '10px', marginLeft: '5%',marginRight:'3%', float:'right', background:'green' ,color:'white' ,border:'white',borderRadius: '99px'}} onClick={()=> setIsModal(!isModal)}>See All FAQS</button> */}
                     <button style={{padding: '10px',background:'#287F30' ,color:'white' ,border:'white',borderRadius: '99px'}}>See All FAQS</button>
                 </Link>
@@ -172,7 +172,7 @@ const MembershipPrivileges = () => {
 
                 </div>
                 <div style={{textAlign: 'center'}}>
-                <Link to={'/faqs'}type="button" >
+                <Link to={'/faqs'}type="button" className='text-decoration-none' >
                     <p>See All FAQS</p>
                 </Link>
                 </div>
