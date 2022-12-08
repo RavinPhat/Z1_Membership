@@ -27,14 +27,23 @@ useEffect(() => {
             </h1>
           </Link>
         </div>
-        <div className='row' style={{ margin: '40px', background: 'white' }}>
-            {categoryPartner?.map((data) =>
-              <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px', padding: '5px' }}>
-                <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
-                <p className='fw-bold' style={{ color: 'Orange' }}>{data.name?.substring(0, 30)}</p>
-                <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.description?.substring(0, 60)}</p>
-              </Link>
-            )}
+        <div className='row' style={{ margin: '20px 40px 0px 40px', background: 'white', }}>
+          {categoryPartner?.map((data) =>
+              <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+
+              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px',width: '100%'}}>
+              <img style={{ width: '100%', height: '112px' ,borderRadius: '10px 10px 10px 10px'}} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data?.gallary)}></img>
+              </div>
+
+              <div>
+              <p>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
+              <p>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+
+            </Link>
+          )}
         </div>
     <Outlet />  
     </div>

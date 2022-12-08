@@ -4,6 +4,10 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link, Outlet } from 'react-router-dom';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper";
 
 const Partner = () => {
 const [partner, setPartner] = useState({})
@@ -33,50 +37,81 @@ useEffect(() => {
             <h1 style={{marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />{partner.category}</h1>
           </Link>
         </div>
+        <div style={{ width: '90%', margin: '0 auto', marginTop: '10px', paddingTop: '30px' }}>
+          <Swiper
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 2500,
+
+            }}
+            className="mySwiper"
+          >
+            {partner.gallary?.map((data) =>
+            
+              <SwiperSlide>
+                <img src={data} alt={data} />
+                </SwiperSlide>
+            )}
+
+          </Swiper>
+
+        </div>
         <div className='row' style={{ margin: '40px', background: 'white' }}>
             <div className='col d-flex flex-column justify-content-center align-items-center gap-2'>
-                <img style={{ width: '100%', height: '100%', objectFit: 'contain', }} src={partner.gallary}></img>
+                {/* <img style={{ width: '100%', height: '100%', objectFit: 'contain', }} src={partner.gallary}></img> */}
             </div>
             <div>
             <h3 style={{marginBottom: '20px', paddingTop: '20px',marginLeft:'5%' }}>Detail Information</h3>
             </div>
-            <div>
-              <table>
-                <tr >
-                  <td>Title</td>
-                  <td>:</td>
-                  <td>{partner.name?.substring(0, 30)}</td>
-                </tr>
-                <tr>
-                  <td>Description</td>
-                  <td>:</td>
-                  <td>{partner.description?.substring(0, 30)}</td>
-                </tr>
-                <tr>
-                  <td>Promotion (Discount) </td>
-                  <td>:</td>
-                  <td>{partner.discount?.substring(0, 30)}</td>
-                </tr>
-                <tr>
-                  <td>Contact</td>
-                  <td>:</td>
-                  <td>{partner.phone?.substring(0, 30)}</td>
-                </tr>
-              </table>
-            </div>
+        </div>
+        <div style={{ margin: '40px', background: 'white' }}>
+          <table>
+            <tr >
+              <td>Title</td>
+              <td>:</td>
+              <td>{partner.name?.substring(0, 30)}</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>:</td>
+              <td>{partner.description === null ? '.....':partner.description?.substring(0, 40)+'...'}</td>
+            </tr>
+            <tr>
+              <td>Promotion (Discount) </td>
+              <td>:</td>
+              <td>{partner.discount?.substring(0, 30)}</td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td>:</td>
+              <td>{partner.phone?.substring(0, 30)}</td>
+            </tr>
+          </table>
         </div>
         {branch? 
         <>
         <div>
             <h3 style={{marginBottom: '20px', paddingTop: '20px',marginLeft:'10%' }}>Availble at</h3>
         </div>
-        <div className='row' style={{ margin: '40px', background: 'white' }}>
+        <div className='row' style={{ marginLeft: '40px',marginRight: '40px',marginTop: '40px',paddingBottom:'20px', background: 'white', }}>
           {branch?.map((data) =>
-            <Link to={`/`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ border: '2px solid gray', borderRadius: '8px', margin: '5px' }}>
-              <img style={{ width: '120px', height: '112px', objectFit: 'contain', }} src={data.gallary}></img>
-              <p className='fw-bold' style={{ color: 'Orange' }}>{data.name}</p>
-              <p>{data.description.length >= 20 ? data.description?.substring(0, 20)+'...':data.description}</p>
-              <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>Discount {data.discount}</p>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+
+              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px',width: '100%'}}>
+              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              </div>
+
+              <div>
+              <p>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
+              <p>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+
             </Link>
           )}
         </div>

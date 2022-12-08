@@ -27,7 +27,6 @@ const TopPartner = () => {
     setTopPartner(resTopPartner.data.data);
   }
 
-
   return (
     <>
       <div style={{ background: 'white'}}>
@@ -67,14 +66,14 @@ const TopPartner = () => {
         </div><br></br>
         <div className='row' style={{ margin: '40px 40px 0px 40px', background: 'white', }}>
           {topPartner?.slice(0, 10).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+              <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
 
               <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px',width: '100%'}}>
-              <img style={{ width: '100%', height: '112px' ,borderRadius: '10px 10px 10px 10px'}} src={data.gallary === '' ?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfht5II3iczN9xXrti-V7vU9UL7em02VjSekeFEgn-quM5R4UvAt3K56bN-jg6s_jR2Zc&usqp=CAU':data.gallary}></img>
+              <img style={{ width: '100%', height: '112px' ,borderRadius: '10px 10px 10px 10px'}} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
               </div>
 
               <div>
-              <p >{data.address === null ? '.....':data.address}</p>
+              <p>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
               <p className='fw-bold' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
               <p>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
               <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>

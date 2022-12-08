@@ -82,7 +82,7 @@ const MembershipPrivileges = () => {
                 <h3 style={{ marginBottom: '20px', paddingTop: '20px', marginLeft: '5%' }}>Detail Information</h3>
             </div>
 
-            <div style={{ marginLeft: '10%' }}>
+            <div style={{ marginLeft: '5%' ,marginRight: '5%'}}>
                 <table>
                     <tr >
                         <td>Name</td>
