@@ -46,6 +46,7 @@ const HomePage = () => {
   const getTopPartner = async () => {
     const resTopPartner = await axios.get('https://dev-z1m.z1platform.com/api/top-partner',
       { headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3MSIsImp0aSI6Ijk2ZTRjYjZmMzVjMDMwY2VhNTVmMTAyYzJhMDljZmE1NTgzNzkzZTRiMjNhZmRiODVmYWIwMzg0MjFiNWFlMTlmMjg2ZTNkNDMwOTI1MjQ5IiwiaWF0IjoxNjY5MzYwMjMwLjY5MjA1OCwibmJmIjoxNjY5MzYwMjMwLjY5MjA2MiwiZXhwIjoxNzI5MzYwMjMwLjY4NjExMiwic3ViIjoiNjYiLCJzY29wZXMiOltdfQ.cyqAhfH-l8LM81nWmq7yPvWp8GsexnuOnUHFW5CFhgpaYq4b8kNV0077yEy4lw5WBU88wlV41Cj-m5tGkLgMdpzjyAMkKkri_18x1pBJwoo-q4By_ozCc4PIJRMa5V9rHDejXjyMMd0zDTwRQiC2Iibtanl8N3zC1KoFIrlbx9rfb6fxIfTDsNvuA_a0nC3ptewi3LRxoIjTPw15mx0YP3XeG9tFqLwUkBcRvUkuSmloP5eCgxEsx5USfy3yMnocR19BQD4MTldSQGme9-vQfssp-1ryLniBUGzc3bnl8bh6sgCdNtBy6dTXWx4cWwcCpRO-TLrqWn9pu-lBZkhPgucbngXk5_y_qdIC4mCBbCrCDG16D8EFJL3KFSnLqucxX_uyRVwJEbjsceF9LiSa4y9aMTU1DTHwY7RLoiDuhxqx9o9q1S5CR7gIABDNo0VulbTJpB26DUeQ1lyFKjEyVgx-_ooMKHjNiT4BvBrno3KPvcTdeCcj6BPzuT3sDQVIASihPV-qTqoh2npqomzE-N6klan-CwBdO5iN0ToIn-ue1viE7FUmuqPyo242cf8pA6Q4sazSXMXRleEkGCnxJ21mz2T7A3IEOvPCJQcirsSjP7Mg9om3TLIwiPS5-vkziZr96aL8B1PmMvklNsMXJMGuQtw-9RGQWpr5DWOqBTo' } })
+      console.log(resTopPartner.data.data);
     setTopPartner(resTopPartner.data.data);
   }
 
@@ -66,7 +67,7 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-      <div style={{ background: 'white',position:'relative'}} >
+      <div style={{ background: 'white',position:'relative', paddingBottom:'20px'}} >
         <div style={{ width: '90%', margin: '0 auto', paddingTop: '30px' }}>
           <Swiper
             spaceBetween={30}
@@ -176,13 +177,14 @@ const HomePage = () => {
         <div >
           <h1 style={{ float: 'left' }}><VolunteerActivismIcon sx={{ width: 50, fontSize: 40 }} />Top Partner</h1>
           <Link to='/toppartner' className='text-decoration-none'>
-            <h4 style={{ float: 'right', marginRight: '5%', color: 'MediumSeaGreen' }}>See All</h4>
+            <h4 className='top-partner-sell-all'>See All</h4>
           </Link>
-        </div><br></br>
+        </div><br></br><br></br>
 
-        <div className='row' style={{ marginLeft: '40px',marginRight: '40px',marginTop: '40px',paddingBottom:'20px', background: 'white', }}>
-          {topPartner?.slice(0, 4).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+
+        {/* <div className='row top-partner-header'>
+          {topPartner?.slice(0, 10).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none link-top-partner'>
 
               <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px', width: '100%'}}>
               <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
@@ -197,6 +199,55 @@ const HomePage = () => {
 
             </Link>
           )}
+        </div> */}
+        
+        {/* <div className='row '>
+          {topPartner?.slice(0, 10).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col ' style={{overflowX : 'scroll' }}>
+
+              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px'}}>
+              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              </div>
+
+              
+
+            </Link>
+          )}
+        </div> */}
+        {/* <div id="container-custom">
+          <div id="objects-custom">
+            {topPartner?.slice(0,10).map((data)=>{
+              <div className="object-custom" key={data.id}>
+                <img src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              </div>
+            })}
+    
+          </div>
+       </div> */}
+       {/* {topPartner?.map((data)=>{
+              <div  key={data.id}>
+                <img src={data.gallary} alt="a" />
+              </div>
+            })} */}
+
+        <div id='container-custom' className='top-partner-header'>
+          <div id="objects-custom">
+          {topPartner?.slice(0, 4).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
+
+              <div className='object-custom link-top-partner'>
+              <img className='top-partner-image' src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <div>
+              <p className='top-partner-content'>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold top-partner-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
+              <p className='top-partner-content'>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold top-partner-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+              </div>
+              
+            </Link>
+          )}
+          </div>
         </div>
         <Outlet />
       </div>
