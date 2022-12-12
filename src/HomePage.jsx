@@ -181,55 +181,6 @@ const HomePage = () => {
           </Link>
         </div><br></br><br></br>
 
-
-        {/* <div className='row top-partner-header'>
-          {topPartner?.slice(0, 10).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none link-top-partner'>
-
-              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px', width: '100%'}}>
-              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
-              </div>
-
-              <div>
-              <p>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
-              <p className='fw-bold' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
-              <p>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
-              <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
-              </div>
-
-            </Link>
-          )}
-        </div> */}
-        
-        {/* <div className='row '>
-          {topPartner?.slice(0, 10).map((data) =>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col ' style={{overflowX : 'scroll' }}>
-
-              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px'}}>
-              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
-              </div>
-
-              
-
-            </Link>
-          )}
-        </div> */}
-        {/* <div id="container-custom">
-          <div id="objects-custom">
-            {topPartner?.slice(0,10).map((data)=>{
-              <div className="object-custom" key={data.id}>
-                <img src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
-              </div>
-            })}
-    
-          </div>
-       </div> */}
-       {/* {topPartner?.map((data)=>{
-              <div  key={data.id}>
-                <img src={data.gallary} alt="a" />
-              </div>
-            })} */}
-
         <div id='container-custom' className='top-partner-header'>
           <div id="objects-custom">
           {topPartner?.slice(0, 4).map((data) =>

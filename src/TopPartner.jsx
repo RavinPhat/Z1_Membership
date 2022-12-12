@@ -62,25 +62,83 @@ const TopPartner = () => {
 
         <br></br>
         <div >
-          <h1 style={{ float: 'left' }}><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Top 10 Partners of Z1M</h1>
-        </div><br></br>
-        <div className='row' style={{ margin: '40px 40px 0px 40px', background: 'white', }}>
-          {topPartner?.slice(0, 10).map((data) =>
-              <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+          <p className='top-10-partner'><VolunteerActivismIcon sx={{ width: 100, fontSize: 35 }} />Top 10 Partners of Z1M</p>
+        </div><br></br><br></br>
+        <div id='container-custom-10' className='top-10-partner-header'>
+          <div id="objects-custom-10">
+          {topPartner?.slice(0, 3).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
 
-              <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px',width: '100%'}}>
-              <img style={{ width: '100%', height: '112px' ,borderRadius: '10px 10px 10px 10px'}} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
-              </div>
-
+              <div className='object-custom-10 link-top-10-partner'>
+              <img className='top-10-partner-image' src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
               <div>
-              <p>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
-              <p className='fw-bold' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
-              <p>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
-              <p className='fw-bold' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              <p className='top-10-partner-content'>{data.address === null ? '.....':data.address?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name.substring(0, 10)}</p>
+              <p className='top-10-partner-content'>{data.description === null ? '.....':data.description?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
               </div>
-
+              </div>
+              
             </Link>
           )}
+          </div>
+        </div>
+        <div id='container-custom-10' className='top-10-partner-header'>
+          <div id="objects-custom-10">
+          {topPartner?.slice(3, 6).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
+
+              <div className='object-custom-10 link-top-10-partner'>
+              <img className='top-10-partner-image' src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <div>
+              <p className='top-10-partner-content'>{data.address === null ? '.....':data.address?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name.substring(0, 10)+'...'}</p>
+              <p className='top-10-partner-content'>{data.description === null ? '.....':data.description?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+              </div>
+              
+            </Link>
+          )}
+          </div>
+        </div>
+        <div id='container-custom-10' className='top-10-partner-header'>
+          <div id="objects-custom-10">
+          {topPartner?.slice(6, 9).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
+
+              <div className='object-custom-10 link-top-10-partner'>
+              <img className='top-10-partner-image' src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <div>
+              <p className='top-10-partner-content'>{data.address === null ? '.....':data.address?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name.substring(0, 10)}</p>
+              <p className='top-10-partner-content'>{data.description === null ? '.....':data.description?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+              </div>
+              
+            </Link>
+          )}
+          </div>
+        </div>
+        <div id='container-custom-10' className='top-10-partner-header'>
+          <div id="objects-custom-10">
+          {topPartner?.slice(9,10 ).map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
+
+              <div className='object-custom-10 link-top-10-partner'>
+              <img className='top-10-partner-image' src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <div>
+              <p className='top-10-partner-content'>{data.address === null ? '.....':data.address?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
+              <p className='top-10-partner-content'>{data.description === null ? '.....':data.description?.substring(0, 10)+'...'}</p>
+              <p className='fw-bold top-10-partner-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+              </div>
+              
+            </Link>
+          )}
+          </div>
         </div>
         <Outlet />
       </div>

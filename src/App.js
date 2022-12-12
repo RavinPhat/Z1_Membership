@@ -1,4 +1,5 @@
 import './App.css';
+import './TopPartner.css';
 import "swiper/css/bundle";
 import "./index.css";
 import HomePage from './HomePage';
