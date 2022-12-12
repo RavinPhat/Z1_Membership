@@ -40,7 +40,7 @@ const OurPartner = () => {
                 <div >
 
                     <Link to='/homepage' className='text-decoration-none'>
-                        <h1 style={{ float: 'left', marginBottom: '20px', marginTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Our Partners</h1>
+                        <h1 className='header_title'><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Our Partners</h1>
                     </Link>
 
                 </div>
@@ -65,14 +65,12 @@ const OurPartner = () => {
                     </Swiper>
 
                 </div><br></br>
-
+                
                 <div className='d-flex flex-column'>
                     <div>
-                        <h1>
-                            <VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Special Offers & Discout
-                        </h1>
+                    <h1 className='header_title'><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Special Offers & Discout</h1>
                     </div>
-                    <div className='row ' style={{ background: 'white', padding: '20px', maxWidth:1024, margin:0}}>
+                    <div className='row ' style={{ padding: '20px', margin:0}}>
                         {specialSlide?.map((data) =>
                             <div className='col-4 d-flex justify-content-center' key={data.id}>
                                 <img src={data.image}></img>
@@ -82,106 +80,187 @@ const OurPartner = () => {
                 </div>
 
                 <div>
-                <h1><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Our Partner By Category</h1>
-                </div>
+                <h1 className='header_title'><VolunteerActivismIcon sx={{ width: 100, fontSize: 40 }} />Our Partner By Category</h1>
+                </div><br></br>
 
-                <div className='row' style={{ margin: '40px', background: 'white' }}>
-                    {categoryPartner?.slice(0,1).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(1,2).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(2,3).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(3,4).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(4,5).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(5,6).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(6,7).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(7,8).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(8,9).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(9,10).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(10,11).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
-                    {categoryPartner?.slice(11,12).map((data) =>
-                        <Link to={`/categorypartner/${data.id}`} key={data.id} className='col-4 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ padding: '10px' }}>
-                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
-                        <p className='col d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
-                        </Link>
-                        
-                    )}
+                <div className='row' style={{ marginTop: '40px',marginLeft:'40px',marginRight:'40px',paddingBottom:'20px', background: 'white' }}>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(0,1).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(1,2).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(2,3).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(3,4).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(4,5).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(5,6).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(6,7).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}}>
+                        {categoryPartner?.slice(7,8).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}} >
+                        {categoryPartner?.slice(8,9).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}} >
+                        {categoryPartner?.slice(9,10).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    <div className='col-lg-3 col-md-3 col-sm-5 col-xs-5' style={{ boxShadow: '0px 0px 7px #08530d', borderRadius: '10px 10px 10px 10px', marginTop:'10px', marginBottom:'10px',marginRight:'45px'}} >
+                        {categoryPartner?.slice(10,11).map((data) =>
+                            <Link to={`/categorypartner/${data.id}`} key={data.id} className='d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ paddingRight: '100px', paddingLeft:'50px',paddingTop:'10px',paddingBottom:'10px' }}>
+                                <div className='row'>
+                                    <div className='col-7'>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2'>{data.name}</p>
+                                        <p className='d-flex flex-column justify-content-center align-items-center gap-2 fw-bold'>{data.category_partners_count} Partners</p>
+                                    </div>
+                                    <div className='col-5'>
+                                        <img style={{ width: '120px', height: '112px', objectFit: 'contain' }} src={data.icon}></img>
+                                    </div>
+                                </div>
+                            </Link>
+                            
+                        )}
+                    </div>
+                    
                 </div>
 
                 <Outlet />

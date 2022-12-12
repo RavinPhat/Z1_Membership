@@ -34,7 +34,7 @@ const TopPartner = () => {
         <div >
 
           <Link to='/homepage' className='text-decoration-none'>
-            <h1 style={{ float: 'left', marginBottom: '20px', marginTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Top Partners</h1>
+            <h1 className='top-10-partner'><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Top Partners</h1>
           </Link>
 
         </div>
@@ -123,7 +123,7 @@ const TopPartner = () => {
         </div>
         <div id='container-custom-10' className='top-10-partner-header'>
           <div id="objects-custom-10">
-          {topPartner?.slice(9,10 ).map((data) =>
+          {topPartner?.slice(9,12 ).map((data) =>
             <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
 
               <div className='object-custom-10 link-top-10-partner'>
