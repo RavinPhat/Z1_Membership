@@ -1,6 +1,8 @@
 import './App.css';
 import './TopPartner.css';
 import './OurPartner.css';
+import './CategoryPartner.css';
+import './Partner.css';
 import "swiper/css/bundle";
 import "./index.css";
 import HomePage from './HomePage';

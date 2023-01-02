@@ -4,6 +4,12 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link, Outlet } from 'react-router-dom';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import { Autoplay, Pagination } from "swiper";
 
 const Advisory = () => {
 const [categoryPartner, setCategoryPartner] = useState()
@@ -19,7 +25,7 @@ useEffect(() => {
 }, [])
 
   return (
-     <div style={{ background: 'white' }}>
+     <div style={{ background: 'white', height:'93vh'}}>
         <div>
           <Link to='/ourpartner' className='text-decoration-none'>
             <h1 style={{marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />
@@ -27,7 +33,30 @@ useEffect(() => {
             </h1>
           </Link>
         </div>
-        <div className='row' style={{ margin: '20px 40px 0px 40px', background: 'white', }}>
+
+        <div style={{ width: '90%', margin: '0 auto', paddingTop: '30px', paddingBottom: '30px'}}>
+          <Swiper
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 2500,
+
+            }}
+            className="mySwiper"
+          >
+            {categoryPartner?.map((data) =>
+              <SwiperSlide style={{height:'320px'}}>
+                <img key={data.id} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)} alt={data.name} width='100%'/>
+                </SwiperSlide>
+            )}
+
+          </Swiper>
+
+        </div>
+        {/* <div className='row' style={{ margin: '20px 40px 0px 40px', background: 'white', }}>
           {categoryPartner?.map((data) =>
               <Link to={`/partner/${data.id}`} key={data.id} className='col-3 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
 
@@ -44,6 +73,25 @@ useEffect(() => {
 
             </Link>
           )}
+        </div> */}
+        <div id='container-custom' className='cate-part-header'>
+          <div id="objects-custom">
+          {categoryPartner?.map((data) =>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col text-decoration-none'>
+
+              <div className='object-custom link-cate-part'>
+              <img className='cate-part-image' style={{}} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <div>
+              <p className='cate-part-content'>{data.address === null ? '.....':data.address?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold cate-part-content' style={{ color: 'Orange' }}>{data.name ===''? '.....':data.name}</p>
+              <p className='cate-part-content'>{data.description === null ? '.....':data.description?.substring(0, 20)+'...'}</p>
+              <p className='fw-bold cate-part-content' style={{ color: 'MediumSeaGreen' }}>{data.discount === null ? '.....':data.discount}</p>
+              </div>
+              </div>
+              
+            </Link>
+          )}
+          </div>
         </div>
     <Outlet />  
     </div>

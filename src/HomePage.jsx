@@ -115,7 +115,7 @@ const HomePage = () => {
           </div>
         </div>
         <div >
-          <h1><VolunteerActivismIcon sx={{ width: 50, fontSize: 40 }} />How We Care</h1>
+          <h1 className='title'><VolunteerActivismIcon sx={{ width: 50, fontSize: 40 }} />How We Care</h1>
         </div>
         <div className='home-visit-info'>
           <Swiper
@@ -175,9 +175,9 @@ const HomePage = () => {
         </div><br></br>
 
         <div >
-          <h1 style={{ float: 'left' }}><VolunteerActivismIcon sx={{ width: 50, fontSize: 40 }} />Top Partner</h1>
+          <h1 className='title'><VolunteerActivismIcon sx={{ width: 50, fontSize: 40 }} />Top Partner</h1>
           <Link to='/toppartner' className='text-decoration-none'>
-            <h4 className='top-partner-sell-all'>See All</h4>
+            <h4 className='top-partner-see-all'>See All</h4>
           </Link>
         </div><br></br><br></br>
 
