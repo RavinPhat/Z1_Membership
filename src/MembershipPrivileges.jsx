@@ -74,7 +74,7 @@ const MembershipPrivileges = () => {
                     <h1 style={{ marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />Home Pages</h1>
                 </Link>
             </div>
-            <div style={{ marginLeft: '5%', marginRight: '5%', textAlign: 'center', background:'#287F30', padding:'50px', backgroundSize: '100%',backgroundImage:'url(./BackgroundProfile.png)' }}>
+            <div style={{ textAlign: 'center', background:'#287F30', padding:'50px', backgroundSize: '100%',backgroundImage:'url(./BackgroundProfile.png)' }}>
                 <img src={member.avatar} height='300px' width='300px' style={{ borderRadius: '50%', textAlign:'center', marginBottom:'10px' }}></img>
             </div>
 
