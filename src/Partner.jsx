@@ -97,13 +97,13 @@ useEffect(() => {
         <div>
             <h3 style={{marginBottom: '20px', paddingTop: '20px',marginLeft:'10%' }}>Availble at</h3>
         </div>
-        <div className='row' style={{ marginLeft: '1rem',marginRight: '2rem',marginTop: '2rem',paddingBottom:'20px', background: 'white', }}>
+        <div className='row' style={{ margin: '3rem',paddingBottom:'20px', background: 'white', }}>
           {branch?.map((data) =>
             // <Link to={`/partner/${data.id}`} key={data.id} className='col-11 d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
-            <Link to={`/partner/${data.id}`} key={data.id} className='col-11 d-flex flex-column gap-2 text-decoration-none' style={{ margin: '30px',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px' }}>
+            <Link to={`/partner/${data.id}`} key={data.id} className='col-12 d-flex flex-column gap-2 text-decoration-none' style={{marginBottom:'3rem',boxShadow: '0px 0px 15px #087c10', borderRadius: '10px 10px 10px 10px'}}>
               
               <div style={{boxShadow: '0px 0px 15px #087c10', borderRadius: '20px 20px 20px 20px',width: '100%'}}>
-              <img style={{ width: '100%', height: '112px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
+              <img style={{ width: '100%', height: '130px',borderRadius: '10px 10px 10px 10px' }} src={(data?.gallary?.length < 1 ?'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/271px-Picture_icon_BLACK.svg.png':data.gallary)}></img>
               </div>
 
               <div style={{paddingLeft:'2rem'}}>

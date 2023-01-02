@@ -25,7 +25,7 @@ useEffect(() => {
 }, [])
 
   return (
-     <div style={{ background: 'white', height:'93vh'}}>
+     <div style={{ background: 'white', height:'100vh'}}>
         <div>
           <Link to='/ourpartner' className='text-decoration-none'>
             <h1 style={{marginBottom: '20px', paddingTop: '20px' }}><KeyboardArrowLeftIcon sx={{ fontSize: 40 }} />
